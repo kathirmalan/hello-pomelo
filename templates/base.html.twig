@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="col-md-4">
+                <a class="navbar-brand" href="/">
+                    <img class="logo_brand" src="{{asset("assets/img/LOGO_HP_RVB_HD.png")}}" alt="Brand_Logo">
+                </a>
+            </div>
+
+            <div class="col-md-8">
+                <div class="dropdown">
+                    <span class="dropDownSpan"><i onclick="showMenu()" id="accbtn" class="dropbtn1 fa fa-user-circle"></i></span>
+                    <div id="profileDropdown" class="dropdown-content">
+                        <a href="#profil"><i class="fa fa-user-circle"></i>Mon Profil</a>
+                        <a href="#logout"><i class="fa fa-sign-out"></i>Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+
+        </div>
+        </div>
+    </nav>
+
+    {% block body %}{% endblock %}
+    
+     <footer class="container">
+        <div class="row align-items-center">
+            <div class="col navbtnSection navBtnLeftPart">
+                <button class="navPreButton" onclick="window.history.go(-1)">Page précédente</button>
+            </div>
+            <div class="col navbtnSection navBtnRightPart">
+                <button class="navSuivanteButton" onclick="window.history.forward()">Page suivante</button>
+            </div>
+        </div>
+    </footer>
+    
+    {% block javascripts %}{% endblock %} 
+    <script src="{{asset('assets/js/jquery.slim.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            console.log("Ready!");
+        });
+
+        function showMenu() {
+            document.getElementById("profileDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn1')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

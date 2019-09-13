@@ -1,0 +1,16 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+index:
+   path: /
+   controller: App\Controller\MainController::index
+
+App_nouvelle_projet:
+   path: /nouveauprojet/nouvelleEntreprise
+   controller: App\Controller\NouveauProjet::nouvelleEntreprise
+
+App_entrepriseExistante_projet:
+   path: /nouveauprojet/entrepriseExistante
+   controller: App\Controller\NouveauProjet::entrepriseExistante
+
