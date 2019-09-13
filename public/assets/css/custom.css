@@ -12,6 +12,9 @@
 .logo_brand{
     width: 45%; 
 }
+.logo_brand img{
+  width: 100%; 
+}
 .dropDownSpan{
     font-size: 3rem !important;
 }
